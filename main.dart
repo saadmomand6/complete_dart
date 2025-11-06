@@ -998,3 +998,81 @@
 //https://www.youtube.com/playlist?list=PLeKQz1VjpjFqqXLvQ8rTnYxZcUqEGA0dm
 //https://www.youtube.com/playlist?list=PLlxmoA0rQ-LyHW9voBdNo4gEEIh0SjG-q
 //https://www.youtube.com/playlist?list=PLk7v1Z2rk4hhvOk-4zSblC0D_9pIgAPjq
+///////////////////////////////////////////////////////////////////////////////
+// Q= Write a password generator in Dart
+// Ans= 
+// void main(){
+//   String userpassword = "Password@1";
+//   List<String> specialChars = [
+//     '!', '@', '#', r'$', '%', '^', '&', '*', '(', ')',
+//     '-', '_', '=', '+', '{', '}', '[', ']', '|', ':',
+//     ';', '"', "'", '<', '>', ',', '.', '?', '/'
+//   ];
+//   List<String> capitalLetters =
+//       List.generate(26, (i) => String.fromCharCode(65 + i));
+//   List<String> digits = List.generate(10, (i) => i.toString());
+//    bool hasUpper = false;
+//   bool hasSpecial = false;
+//   bool hasDigit = false;
+//   print(specialChars);
+//   print(capitalLetters);
+//   print(digits);
+//   for (var ch in userpassword.split('')) {
+//      if (capitalLetters.contains(ch)) hasUpper = true;
+//     if (specialChars.contains(ch)) hasSpecial = true;
+//     if (digits.contains(ch)) hasDigit = true;
+//   }
+//   if (userpassword.length >= 8 && hasUpper && hasSpecial && hasDigit) {
+//     print("Strong password ✅");
+//   } else {
+//     print("Weak password ❌");
+//   }
+// }
+///////////////////////////////////////////////////////////////////////////////////////////
+// Q= Create a program that will play the “cows and bulls” game with the user. 
+// Ans=
+// import 'dart:math';
+// void main(){
+//   final random = Random();
+//   List<int> secretDigits = List.generate(4, (_) => random.nextInt(10));
+//   List<String> revealed = List.generate(4, (_) => "_");
+//   print("Secret Number (for demo): $secretDigits");
+//    print("revealed Number (for demo): $revealed");
+//   int cows = 0;
+//   int bulls = 0;
+//   // Track already revealed positions
+//   Set<int> revealedIndexes = {};
+//   while (cows < 4) {
+//     int guess = random.nextInt(10);
+//     // Find all positions where digit exists
+//     List<int> matchedIndexes = [];
+//     for (int i = 0; i < secretDigits.length; i++) {
+//       if (secretDigits[i] == guess) {
+//         matchedIndexes.add(i);
+//       }
+//     }
+//     bool cowFound = false;
+//     for (int idx in matchedIndexes) {
+//       if (!revealedIndexes.contains(idx)) {
+//         // reveal digit at position idx
+//         revealed[idx] = guess.toString();
+//         revealedIndexes.add(idx);
+//         cows++;
+//         cowFound = true;
+//         print("You got a COW for digit $guess ✅");
+//         print("Revealed: $revealed\n");
+//         break; // reveal only one position per guess-hit
+//       }
+//     }
+//     if (!cowFound) {
+//       bulls++;
+//       print("You got a BULL for digit $guess ❌\n");
+//     }
+//   }
+//   print("🎉 GAME OVER 🎉");
+//   print("Secret number was: $secretDigits");
+//   print("Final revealed:   $revealed");
+//   print("Total Cows: $cows");
+//   print("Total Bulls: $bulls");
+// }
+
